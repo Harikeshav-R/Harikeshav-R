@@ -29,7 +29,7 @@
     </g>
     <g transform="translate(30 162)" style="animation: fadein 0.4s ease-in-out forwards; animation-delay: 0.55s; opacity:0">
       <text x="0" y="0" class="lbl">📦  Contributed to (last year)</text>
-      <text x="320" y="0" class="val">47</text>
+      <text x="320" y="0" class="val">32</text>
     </g>
   <g transform="translate(400 118)">
     <circle r="42" fill="none" stroke="#1b2430" stroke-width="6"/>
