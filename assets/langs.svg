@@ -1,0 +1,45 @@
+<svg width="480" height="194" viewBox="0 0 480 194" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Most used languages">
+  <style>
+    .title{font:600 18px 'Segoe UI',Ubuntu,sans-serif;fill:#2C5364}
+    .lg{font:400 13px 'Segoe UI',Ubuntu,sans-serif;fill:#c9d1d9}
+    .lgp{font:700 13px 'Segoe UI',Ubuntu,sans-serif;fill:#8b949e;text-anchor:end}
+    @keyframes fadein{to{opacity:1}}
+  </style>
+  <rect x="0.5" y="0.5" rx="8" width="479" height="193" fill="#0D1117" stroke="#1b2430"/>
+  <text x="25" y="35" class="title">Most Used Languages</text>
+  <clipPath id="r"><rect x="25" y="55" width="430" height="10" rx="5"/></clipPath>
+  <g clip-path="url(#r)"><rect x="25.00" y="55" width="141.89" height="10" fill="#555555"/><rect x="166.89" y="55" width="120.87" height="10" fill="#3572A5"/><rect x="287.76" y="55" width="85.18" height="10" fill="#3178c6"/><rect x="372.94" y="55" width="22.06" height="10" fill="#e34c26"/><rect x="395.00" y="55" width="19.21" height="10" fill="#f34b7d"/><rect x="414.21" y="55" width="14.60" height="10" fill="#dea584"/><rect x="428.81" y="55" width="14.18" height="10" fill="#663399"/><rect x="442.98" y="55" width="12.02" height="10" fill="#f1e05a"/></g>
+  <g transform="translate(25 90)" style="animation: fadein 0.4s ease forwards; animation-delay:0.1s; opacity:0">
+        <circle cx="6" cy="-4" r="6" fill="#555555"/>
+        <text x="20" y="0" class="lg">C</text>
+        <text x="200" y="0" class="lgp">33.0%</text>
+      </g><g transform="translate(255 90)" style="animation: fadein 0.4s ease forwards; animation-delay:0.17s; opacity:0">
+        <circle cx="6" cy="-4" r="6" fill="#3572A5"/>
+        <text x="20" y="0" class="lg">Python</text>
+        <text x="200" y="0" class="lgp">28.1%</text>
+      </g><g transform="translate(25 114)" style="animation: fadein 0.4s ease forwards; animation-delay:0.24000000000000002s; opacity:0">
+        <circle cx="6" cy="-4" r="6" fill="#3178c6"/>
+        <text x="20" y="0" class="lg">TypeScript</text>
+        <text x="200" y="0" class="lgp">19.8%</text>
+      </g><g transform="translate(255 114)" style="animation: fadein 0.4s ease forwards; animation-delay:0.31000000000000005s; opacity:0">
+        <circle cx="6" cy="-4" r="6" fill="#e34c26"/>
+        <text x="20" y="0" class="lg">HTML</text>
+        <text x="200" y="0" class="lgp">5.1%</text>
+      </g><g transform="translate(25 138)" style="animation: fadein 0.4s ease forwards; animation-delay:0.38s; opacity:0">
+        <circle cx="6" cy="-4" r="6" fill="#f34b7d"/>
+        <text x="20" y="0" class="lg">C++</text>
+        <text x="200" y="0" class="lgp">4.5%</text>
+      </g><g transform="translate(255 138)" style="animation: fadein 0.4s ease forwards; animation-delay:0.45000000000000007s; opacity:0">
+        <circle cx="6" cy="-4" r="6" fill="#dea584"/>
+        <text x="20" y="0" class="lg">Rust</text>
+        <text x="200" y="0" class="lgp">3.4%</text>
+      </g><g transform="translate(25 162)" style="animation: fadein 0.4s ease forwards; animation-delay:0.52s; opacity:0">
+        <circle cx="6" cy="-4" r="6" fill="#663399"/>
+        <text x="20" y="0" class="lg">CSS</text>
+        <text x="200" y="0" class="lgp">3.3%</text>
+      </g><g transform="translate(255 162)" style="animation: fadein 0.4s ease forwards; animation-delay:0.5900000000000001s; opacity:0">
+        <circle cx="6" cy="-4" r="6" fill="#f1e05a"/>
+        <text x="20" y="0" class="lg">JavaScript</text>
+        <text x="200" y="0" class="lgp">2.8%</text>
+      </g>
+</svg>

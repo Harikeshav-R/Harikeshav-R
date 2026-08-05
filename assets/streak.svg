@@ -1,0 +1,26 @@
+<svg width="480" height="195" viewBox="0 0 480 195" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Contribution streak">
+  <style>
+    .big{font:800 34px 'Segoe UI',Ubuntu,sans-serif;fill:#c9d1d9}
+    .cap{font:600 13px 'Segoe UI',Ubuntu,sans-serif;fill:#2C5364}
+    .cap.hot{fill:#e8792b}
+    .sub{font:400 11px 'Segoe UI',Ubuntu,sans-serif;fill:#8b949e}
+    @keyframes fadein{to{opacity:1}}
+  </style>
+  <rect x="0.5" y="0.5" rx="8" width="479" height="194" fill="#0D1117" stroke="#1b2430"/>
+  <line x1="160" y1="45" x2="160" y2="150" stroke="#1b2430"/>
+  <line x1="320" y1="45" x2="320" y2="150" stroke="#1b2430"/>
+  <circle cx="240" cy="97" r="46" fill="none" stroke="#e8792b" stroke-width="4" opacity="0.9"/>
+  <g transform="translate(80 0)" style="animation:fadein .5s ease forwards;animation-delay:0.15s;opacity:0">
+      <text x="0" y="72" text-anchor="middle" class="big">2,545</text>
+      <text x="0" y="105" text-anchor="middle" class="cap ">Contributions</text>
+      <text x="0" y="126" text-anchor="middle" class="sub">(past year)</text>
+    </g><g transform="translate(240 0)" style="animation:fadein .5s ease forwards;animation-delay:0.3s;opacity:0">
+      <text x="0" y="72" text-anchor="middle" class="big">6</text>
+      <text x="0" y="105" text-anchor="middle" class="cap hot">Current Streak</text>
+      <text x="0" y="126" text-anchor="middle" class="sub">🔥</text>
+    </g><g transform="translate(400 0)" style="animation:fadein .5s ease forwards;animation-delay:0.44999999999999996s;opacity:0">
+      <text x="0" y="72" text-anchor="middle" class="big">12</text>
+      <text x="0" y="105" text-anchor="middle" class="cap ">Longest Streak</text>
+      <text x="0" y="126" text-anchor="middle" class="sub">(past year)</text>
+    </g>
+</svg>

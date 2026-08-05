@@ -1,0 +1,45 @@
+<svg width="480" height="195" viewBox="0 0 480 195" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="GitHub stats for Harikeshav Rameshkumar">
+  <style>
+    .title{font:600 18px 'Segoe UI',Ubuntu,sans-serif;fill:#2C5364}
+    .lbl{font:400 14px 'Segoe UI',Ubuntu,sans-serif;fill:#c9d1d9}
+    .val{font:700 14px 'Segoe UI',Ubuntu,sans-serif;fill:#c9d1d9;text-anchor:end}
+    .ring-num{font:800 22px 'Segoe UI',Ubuntu,sans-serif;fill:#2C5364;text-anchor:middle}
+    .ring-cap{font:400 10px 'Segoe UI',Ubuntu,sans-serif;fill:#8b949e;text-anchor:middle}
+    @keyframes fadein{to{opacity:1}}
+    @keyframes grow{to{stroke-dashoffset:0}}
+  </style>
+  <rect x="0.5" y="0.5" rx="8" width="479" height="194" fill="#0D1117" stroke="#1b2430"/>
+  <text x="30" y="35" class="title">Harikeshav Rameshkumar · GitHub Stats</text>
+  
+    <g transform="translate(30 62)" style="animation: fadein 0.4s ease-in-out forwards; animation-delay: 0.15s; opacity:0">
+      <text x="0" y="0" class="lbl">⭐  Total Stars Earned</text>
+      <text x="320" y="0" class="val">17</text>
+    </g>
+    <g transform="translate(30 87)" style="animation: fadein 0.4s ease-in-out forwards; animation-delay: 0.25s; opacity:0">
+      <text x="0" y="0" class="lbl">🔀  Total Commits (2026)</text>
+      <text x="320" y="0" class="val">1,813</text>
+    </g>
+    <g transform="translate(30 112)" style="animation: fadein 0.4s ease-in-out forwards; animation-delay: 0.35s; opacity:0">
+      <text x="0" y="0" class="lbl">⬆️  Total PRs</text>
+      <text x="320" y="0" class="val">103</text>
+    </g>
+    <g transform="translate(30 137)" style="animation: fadein 0.4s ease-in-out forwards; animation-delay: 0.45000000000000007s; opacity:0">
+      <text x="0" y="0" class="lbl">🐛  Total Issues</text>
+      <text x="320" y="0" class="val">3</text>
+    </g>
+    <g transform="translate(30 162)" style="animation: fadein 0.4s ease-in-out forwards; animation-delay: 0.55s; opacity:0">
+      <text x="0" y="0" class="lbl">📦  Contributed to (last year)</text>
+      <text x="320" y="0" class="val">47</text>
+    </g>
+  <g transform="translate(400 118)">
+    <circle r="42" fill="none" stroke="#1b2430" stroke-width="6"/>
+    <circle r="42" fill="none" stroke="#2C5364" stroke-width="6"
+      stroke-linecap="round" transform="rotate(-90)"
+      stroke-dasharray="264" stroke-dashoffset="66"
+      style="animation: grow 1s ease-in-out forwards"/>
+    <text y="-2" class="ring-num">2,545</text>
+    <text y="14" class="ring-cap">contributions</text>
+    <text y="26" class="ring-cap">this year</text>
+  </g>
+  <g transform="translate(400 118)"></g>
+</svg>
