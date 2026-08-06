@@ -47,8 +47,6 @@ class Harikeshav:
         return "Go a layer deeper — from SIMD kernels to multi-agent orchestration."
 ```
 
-- 🧭 &nbsp;**Currently building [Atlas](https://github.com/Harikeshav-R/Atlas)** — a local-first, terminal-native job-application co-pilot that discovers roles, tailors a one-page résumé & cover letter per posting from a single master résumé, and tracks every application through to offer.
-- 🔭 &nbsp;Also building **[LEAP](https://github.com/Harikeshav-R/LEAP)** — a distributed LLM inference engine that splits transformer layers across a ring of consumer machines to break the VRAM wall.
 - 🧪 &nbsp;Researching **encrypted computation** — compiling neural nets to run directly on ciphertext with Fully Homomorphic Encryption.
 - 🏆 &nbsp;**7×** hackathon-winning teams (RevolutionUC, TartanHacks @ CMU, NextHacks, HackOHI/O).
 - 📫 &nbsp;Reach me at **r.harikeshav@icloud.com** &nbsp;·&nbsp; more at **[harikeshav.me](https://harikeshav.me)**
