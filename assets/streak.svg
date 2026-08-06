@@ -11,7 +11,7 @@
   <line x1="320" y1="45" x2="320" y2="150" stroke="#1b2430"/>
   <circle cx="240" cy="97" r="46" fill="none" stroke="#e8792b" stroke-width="4" opacity="0.9"/>
   <g transform="translate(80 0)" style="animation:fadein .5s ease forwards;animation-delay:0.15s;opacity:0">
-      <text x="0" y="72" text-anchor="middle" class="big">2,546</text>
+      <text x="0" y="72" text-anchor="middle" class="big">2,563</text>
       <text x="0" y="105" text-anchor="middle" class="cap ">Contributions</text>
       <text x="0" y="126" text-anchor="middle" class="sub">(past year)</text>
     </g><g transform="translate(240 0)" style="animation:fadein .5s ease forwards;animation-delay:0.3s;opacity:0">
