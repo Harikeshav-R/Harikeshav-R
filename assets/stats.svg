@@ -17,11 +17,11 @@
     </g>
     <g transform="translate(30 87)" style="animation: fadein 0.4s ease-in-out forwards; animation-delay: 0.25s; opacity:0">
       <text x="0" y="0" class="lbl">🔀  Total Commits (2026)</text>
-      <text x="320" y="0" class="val">1,829</text>
+      <text x="320" y="0" class="val">1,857</text>
     </g>
     <g transform="translate(30 112)" style="animation: fadein 0.4s ease-in-out forwards; animation-delay: 0.35s; opacity:0">
       <text x="0" y="0" class="lbl">⬆️  Total PRs</text>
-      <text x="320" y="0" class="val">106</text>
+      <text x="320" y="0" class="val">109</text>
     </g>
     <g transform="translate(30 137)" style="animation: fadein 0.4s ease-in-out forwards; animation-delay: 0.45000000000000007s; opacity:0">
       <text x="0" y="0" class="lbl">🐛  Total Issues</text>
@@ -37,7 +37,7 @@
       stroke-linecap="round" transform="rotate(-90)"
       stroke-dasharray="264" stroke-dashoffset="66"
       style="animation: grow 1s ease-in-out forwards"/>
-    <text y="-2" class="ring-num">2,564</text>
+    <text y="-2" class="ring-num">2,596</text>
     <text y="14" class="ring-cap">contributions</text>
     <text y="26" class="ring-cap">this year</text>
   </g>
