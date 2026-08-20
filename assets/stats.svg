@@ -37,7 +37,7 @@
       stroke-linecap="round" transform="rotate(-90)"
       stroke-dasharray="264" stroke-dashoffset="66"
       style="animation: grow 1s ease-in-out forwards"/>
-    <text y="-2" class="ring-num">2,556</text>
+    <text y="-2" class="ring-num">2,557</text>
     <text y="14" class="ring-cap">contributions</text>
     <text y="26" class="ring-cap">this year</text>
   </g>
