@@ -8,7 +8,7 @@
   <rect x="0.5" y="0.5" rx="8" width="479" height="193" fill="#0D1117" stroke="#1b2430"/>
   <text x="25" y="35" class="title">Most Used Languages</text>
   <clipPath id="r"><rect x="25" y="55" width="430" height="10" rx="5"/></clipPath>
-  <g clip-path="url(#r)"><rect x="25.00" y="55" width="158.24" height="10" fill="#555555"/><rect x="183.24" y="55" width="131.68" height="10" fill="#3572A5"/><rect x="314.93" y="55" width="59.23" height="10" fill="#3178c6"/><rect x="374.16" y="55" width="22.74" height="10" fill="#e34c26"/><rect x="396.89" y="55" width="16.76" height="10" fill="#f34b7d"/><rect x="413.65" y="55" width="15.31" height="10" fill="#663399"/><rect x="428.96" y="55" width="13.69" height="10" fill="#dea584"/><rect x="442.65" y="55" width="12.35" height="10" fill="#178600"/></g>
+  <g clip-path="url(#r)"><rect x="25.00" y="55" width="158.24" height="10" fill="#555555"/><rect x="183.24" y="55" width="131.68" height="10" fill="#3572A5"/><rect x="314.93" y="55" width="59.23" height="10" fill="#3178c6"/><rect x="374.16" y="55" width="22.74" height="10" fill="#e34c26"/><rect x="396.89" y="55" width="16.76" height="10" fill="#f34b7d"/><rect x="413.65" y="55" width="15.31" height="10" fill="#663399"/><rect x="428.96" y="55" width="13.69" height="10" fill="#dea584"/><rect x="442.65" y="55" width="12.35" height="10" fill="#7355dd"/></g>
   <g transform="translate(25 90)" style="animation: fadein 0.4s ease forwards; animation-delay:0.1s; opacity:0">
         <circle cx="6" cy="-4" r="6" fill="#555555"/>
         <text x="20" y="0" class="lg">C</text>
@@ -38,7 +38,7 @@
         <text x="20" y="0" class="lg">Rust</text>
         <text x="200" y="0" class="lgp">3.2%</text>
       </g><g transform="translate(255 162)" style="animation: fadein 0.4s ease forwards; animation-delay:0.5900000000000001s; opacity:0">
-        <circle cx="6" cy="-4" r="6" fill="#178600"/>
+        <circle cx="6" cy="-4" r="6" fill="#7355dd"/>
         <text x="20" y="0" class="lg">C#</text>
         <text x="200" y="0" class="lgp">2.9%</text>
       </g>
