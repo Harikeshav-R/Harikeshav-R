@@ -130,7 +130,11 @@ class Harikeshav:
 
 <br/>
 
-<img width="95%" src="https://github-readme-activity-graph.vercel.app/graph?username=Harikeshav-R&theme=react-dark&hide_border=true&bg_color=0D1117&color=2C5364&line=2C5364&point=ffffff&area=true" alt="Contribution Graph" />
+[![Profile Views](https://komarev.com/ghpvc/?username=Harikeshav-R&style=for-the-badge&color=2C5364&label=PROFILE+VIEWS)](https://github.com/Harikeshav-R)
+
+<br/>
+
+<img width="95%" src="./assets/activity.svg" alt="Contribution Graph" />
 
 </div>
 

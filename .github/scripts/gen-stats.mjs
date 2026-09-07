@@ -234,43 +234,240 @@ function langsSVG() {
 // ══════════════════════════════════════════════════════════════════════════
 function headerSVG() {
   const W = 1000,
-    H = 200;
-  // faint circuit dots for texture
-  let dots = "";
-  for (let gy = 0; gy < H; gy += 25)
-    for (let gx = 0; gx < W; gx += 25)
-      dots += `<circle cx="${gx}" cy="${gy}" r="1" fill="#ffffff" opacity="0.05"/>`;
+    H = 270;
+
+  const displayName = u.name || "Harikeshav Rameshkumar";
+
+  // Circuit traces / Bus routing with 45° angled lines (HPC / CPU aesthetic)
+  const circuitTraces = `
+    <g stroke="#38bdf8" stroke-opacity="0.18" stroke-width="1.2" fill="none">
+      <!-- Left side traces -->
+      <path d="M 0 80 L 90 80 L 130 120 L 200 120"/>
+      <path d="M 0 160 L 60 160 L 100 200 L 180 200"/>
+      <path d="M 70 44 L 70 60 L 110 100 L 110 160"/>
+      <!-- Right side traces -->
+      <path d="M 1000 80 L 910 80 L 870 120 L 800 120"/>
+      <path d="M 1000 160 L 940 160 L 900 200 L 820 200"/>
+      <path d="M 930 44 L 930 60 L 890 100 L 890 160"/>
+    </g>
+    <!-- Solder / Node Pads -->
+    <g fill="#38bdf8" opacity="0.4">
+      <circle cx="200" cy="120" r="3"/>
+      <circle cx="180" cy="200" r="3"/>
+      <circle cx="800" cy="120" r="3"/>
+      <circle cx="820" cy="200" r="3"/>
+      <circle cx="110" cy="160" r="2.5"/>
+      <circle cx="890" cy="160" r="2.5"/>
+    </g>
+    <!-- Pulsing Node Highlights -->
+    <circle cx="200" cy="120" r="5" fill="none" stroke="#38bdf8" opacity="0.6">
+      <animate attributeName="r" values="3;7;3" dur="2.4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0.1;0.8" dur="2.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="800" cy="120" r="5" fill="none" stroke="#38bdf8" opacity="0.6">
+      <animate attributeName="r" values="3;7;3" dur="2.4s" begin="1.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0.1;0.8" dur="2.4s" begin="1.2s" repeatCount="indefinite"/>
+    </circle>
+  `;
+
+  // Perspective Cyber Grid at the bottom
+  let gridLines = "";
+  for (let x = 0; x <= W; x += 40) {
+    gridLines += `<line x1="${x}" y1="190" x2="${W / 2 + (x - W / 2) * 2.2}" y2="${H}" stroke="#2C5364" stroke-opacity="0.25" stroke-width="1"/>`;
+  }
+  for (let y = 195; y <= H; y += 12) {
+    gridLines += `<line x1="0" y1="${y}" x2="${W}" y2="${y}" stroke="#2C5364" stroke-opacity="0.25" stroke-width="1"/>`;
+  }
+
   return `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${esc(
-    u.name
-  )}">
+    displayName
+  )} — Systems &amp; AI Engineer">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0F2027"/>
-      <stop offset="50%" stop-color="#203A43"/>
-      <stop offset="100%" stop-color="#2C5364"/>
+    <!-- Deep Space Gradient Background -->
+    <linearGradient id="deepBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06090e"/>
+      <stop offset="35%" stop-color="#0a1019"/>
+      <stop offset="70%" stop-color="#0c1724"/>
+      <stop offset="100%" stop-color="#070c14"/>
     </linearGradient>
-    <linearGradient id="shine" x1="0" y1="0" x2="1" y2="0">
+
+    <!-- Radial Glow 1 (Cyan / Teal Accent) -->
+    <radialGradient id="glowTeal" cx="22%" cy="35%" r="55%">
+      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.18"/>
+      <stop offset="45%" stop-color="#2C5364" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Radial Glow 2 (Electric Indigo Accent) -->
+    <radialGradient id="glowIndigo" cx="78%" cy="65%" r="55%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.16"/>
+      <stop offset="50%" stop-color="#0ea5e9" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Text Metallic Silver→Icy Teal Gradient -->
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="40%" stop-color="#f8fafc"/>
+      <stop offset="75%" stop-color="#7dd3fc"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+
+    <!-- Accent Bar Gradient -->
+    <linearGradient id="barGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2C5364" stop-opacity="0"/>
+      <stop offset="25%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#67e8f9"/>
+      <stop offset="75%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#2C5364" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Light Sweep Animation across banner -->
+    <linearGradient id="lightBeam" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.10"/>
+      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.12"/>
       <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
-      <animate attributeName="x1" values="-1;1" dur="6s" repeatCount="indefinite"/>
-      <animate attributeName="x2" values="0;2" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="x1" values="-150%;150%" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="-50%;250%" dur="6s" repeatCount="indefinite"/>
     </linearGradient>
+
+    <!-- Pill Gradient -->
+    <linearGradient id="pillGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#15202e" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0a1019" stop-opacity="0.8"/>
+    </linearGradient>
+
+    <!-- Grid Fade Mask -->
+    <linearGradient id="gridMaskGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="35%" stop-color="#fff" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="1"/>
+    </linearGradient>
+    <mask id="gridMask">
+      <rect x="0" y="190" width="${W}" height="80" fill="url(#gridMaskGrad)"/>
+    </mask>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
-  <rect width="${W}" height="${H}" fill="url(#bg)"/>
-  <g>${dots}</g>
-  <rect width="${W}" height="${H}" fill="url(#shine)"/>
-  <text x="50%" y="82" text-anchor="middle"
-    style="font:800 46px 'Segoe UI',Ubuntu,sans-serif;fill:#ffffff;letter-spacing:1px">
-    Harikeshav Rameshkumar
-    <animate attributeName="opacity" from="0" to="1" dur="1.2s" fill="freeze"/>
-  </text>
-  <g style="opacity:0"><animate attributeName="opacity" from="0" to="1" dur="1.2s" begin="0.4s" fill="freeze"/>
-    <rect x="50%" y="100" width="120" height="3" rx="2" fill="#4a8296" transform="translate(-60 0)"/>
-    <text x="50%" y="140" text-anchor="middle"
-      style="font:400 19px 'Segoe UI',Ubuntu,sans-serif;fill:#c9d1d9;letter-spacing:2px">
-      Systems &amp; AI Engineer  ·  HPC  ·  Distributed Systems  ·  LLM Architecture
+
+  <style>
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .hud-title { font: 600 11px 'JetBrains Mono', 'Fira Code', 'SF Mono', Consolas, monospace; fill: #64748b; letter-spacing: 1.5px; }
+    .hud-stat { font: 600 11px 'JetBrains Mono', 'Fira Code', 'SF Mono', Consolas, monospace; fill: #38bdf8; letter-spacing: 1px; }
+    .name { font: 800 44px -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, sans-serif; letter-spacing: -0.5px; }
+    .tagline { font: 500 14px 'JetBrains Mono', 'Fira Code', 'SF Mono', Consolas, monospace; fill: #94a3b8; }
+    .tag-text { font: 600 12px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; fill: #e2e8f0; }
+    .tag-icon { font: 600 12px monospace; fill: #38bdf8; }
+  </style>
+
+  <!-- Background Base -->
+  <rect width="${W}" height="${H}" rx="12" fill="url(#deepBg)"/>
+
+  <!-- Radial Ambient Lighting -->
+  <rect width="${W}" height="${H}" rx="12" fill="url(#glowTeal)"/>
+  <rect width="${W}" height="${H}" rx="12" fill="url(#glowIndigo)"/>
+
+  <!-- Circuit Routing Traces & Nodes -->
+  ${circuitTraces}
+
+  <!-- Perspective Floor Grid (Masked) -->
+  <g mask="url(#gridMask)">${gridLines}</g>
+
+  <!-- Shimmer Sweep -->
+  <rect width="${W}" height="${H}" rx="12" fill="url(#lightBeam)"/>
+
+  <!-- Outer HUD Frame Border -->
+  <rect x="1" y="1" width="${W - 2}" height="${H - 2}" rx="11" fill="none" stroke="#1b2430" stroke-width="1.5"/>
+  <rect x="1" y="1" width="${W - 2}" height="${H - 2}" rx="11" fill="none" stroke="#38bdf8" stroke-opacity="0.2" stroke-width="1"/>
+
+  <!-- Corner Tech Accents -->
+  <path d="M 12 26 L 12 12 L 26 12" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+  <path d="M ${W - 12} 26 L ${W - 12} 12 L ${W - 26} 12" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 12 ${H - 26} L 12 ${H - 12} L 26 ${H - 12}" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+  <path d="M ${W - 12} ${H - 26} L ${W - 12} ${H - 12} L ${W - 26} ${H - 12}" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Top HUD Bar -->
+  <g transform="translate(24 24)">
+    <!-- Terminal Dots -->
+    <circle cx="8" cy="0" r="4.5" fill="#ef4444" opacity="0.8"/>
+    <circle cx="23" cy="0" r="4.5" fill="#f59e0b" opacity="0.8"/>
+    <circle cx="38" cy="0" r="4.5" fill="#10b981" opacity="0.8"/>
+    <text x="56" y="4" class="hud-title">SYS://HARIKESHAV.ME</text>
+    <text x="${W - 48}" y="4" class="hud-stat" text-anchor="end">
+      <tspan fill="#10b981">●</tspan> STATUS: ACTIVE <tspan fill="#475569">|</tspan> SWE @ GE AEROSPACE
     </text>
+  </g>
+
+  <!-- Divider Line -->
+  <line x1="24" y1="40" x2="${W - 24}" y2="40" stroke="#1b2430" stroke-width="1"/>
+
+  <!-- Main Hero Title -->
+  <g transform="translate(500 102)" text-anchor="middle">
+    <!-- Glow Underlay -->
+    <text x="0" y="0" class="name" fill="#38bdf8" opacity="0.25" filter="url(#glow)">${esc(
+      displayName
+    )}</text>
+    <!-- Crisp Gradient Title -->
+    <text x="0" y="0" class="name" fill="url(#textGrad)">${esc(
+      displayName
+    )}</text>
+  </g>
+
+  <!-- Sleek Glowing Neon Divider Bar -->
+  <rect x="360" y="116" width="280" height="2.5" rx="1.2" fill="url(#barGrad)"/>
+
+  <!-- Subtitle with terminal typing cursor -->
+  <g transform="translate(500 148)" text-anchor="middle">
+    <text class="tagline">
+      <tspan fill="#38bdf8">&gt; </tspan>
+      Go a layer deeper — from SIMD kernels to multi-agent orchestration
+      <tspan fill="#38bdf8" style="animation: blink 1s infinite">_</tspan>
+    </text>
+  </g>
+
+  <!-- 4 Feature Pills / Specializations -->
+  <g transform="translate(500 205)" text-anchor="middle">
+    <!-- Pill 1: HPC & SIMD -->
+    <g transform="translate(-340 -16)">
+      <rect x="0" y="0" width="155" height="32" rx="16" fill="url(#pillGrad)" stroke="#38bdf8" stroke-opacity="0.35" stroke-width="1"/>
+      <text x="77.5" y="20" class="tag-text" text-anchor="middle">
+        <tspan class="tag-icon">⚡ </tspan>HPC &amp; SIMD
+      </text>
+    </g>
+
+    <!-- Pill 2: Distributed Systems -->
+    <g transform="translate(-170 -16)">
+      <rect x="0" y="0" width="180" height="32" rx="16" fill="url(#pillGrad)" stroke="#38bdf8" stroke-opacity="0.35" stroke-width="1"/>
+      <text x="90" y="20" class="tag-text" text-anchor="middle">
+        <tspan class="tag-icon">🌐 </tspan>Distributed Systems
+      </text>
+    </g>
+
+    <!-- Pill 3: LLM Architecture -->
+    <g transform="translate(25 -16)">
+      <rect x="0" y="0" width="165" height="32" rx="16" fill="url(#pillGrad)" stroke="#38bdf8" stroke-opacity="0.35" stroke-width="1"/>
+      <text x="82.5" y="20" class="tag-text" text-anchor="middle">
+        <tspan class="tag-icon">🧠 </tspan>LLM Architecture
+      </text>
+    </g>
+
+    <!-- Pill 4: Applied Crypto -->
+    <g transform="translate(205 -16)">
+      <rect x="0" y="0" width="145" height="32" rx="16" fill="url(#pillGrad)" stroke="#38bdf8" stroke-opacity="0.35" stroke-width="1"/>
+      <text x="72.5" y="20" class="tag-text" text-anchor="middle">
+        <tspan class="tag-icon">🔐 </tspan>Applied Crypto
+      </text>
+    </g>
   </g>
 </svg>`;
 }
@@ -317,11 +514,149 @@ function streakSVG() {
 </svg>`;
 }
 
+// ══════════════════════════════════════════════════════════════════════════
+// SVG 5 — Activity / Contribution Graph (self-hosted; replaces flaky activity-graph)
+// ══════════════════════════════════════════════════════════════════════════
+const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+function fmtDate(dStr) {
+  const parts = dStr.split("-");
+  const m = parseInt(parts[1], 10);
+  const d = parseInt(parts[2], 10);
+  return `${months[m - 1]} ${d}`;
+}
+
+function activitySVG() {
+  const W = 840,
+    H = 210;
+  const last31 = days.slice(-31);
+  const total31 = last31.reduce((a, d) => a + d.contributionCount, 0);
+  const maxCount = Math.max(...last31.map((d) => d.contributionCount), 1);
+  let yMax = Math.max(maxCount, 4);
+  if (yMax % 2 !== 0) yMax += 1;
+  const yMid = Math.round(yMax / 2);
+
+  const padLeft = 45,
+    padRight = 35,
+    padTop = 68,
+    padBottom = 38;
+  const chartW = W - padLeft - padRight;
+  const chartH = H - padTop - padBottom;
+  const baseY = padTop + chartH;
+
+  const pts = last31.map((d, i) => {
+    const x = padLeft + (i / (last31.length - 1)) * chartW;
+    const y = baseY - (d.contributionCount / yMax) * chartH;
+    return { x, y, count: d.contributionCount, date: d.date };
+  });
+
+  let pathD = `M ${pts[0].x.toFixed(2)} ${pts[0].y.toFixed(2)}`;
+  let areaD = `M ${pts[0].x.toFixed(2)} ${baseY.toFixed(2)} L ${pts[0].x.toFixed(2)} ${pts[0].y.toFixed(2)}`;
+
+  for (let i = 0; i < pts.length - 1; i++) {
+    const p0 = pts[i];
+    const p1 = pts[i + 1];
+    const pPrev = pts[i - 1] || p0;
+    const pNext = pts[i + 2] || p1;
+
+    let cp1x = p0.x + (p1.x - pPrev.x) / 6;
+    let cp1y = p0.y + (p1.y - pPrev.y) / 6;
+    let cp2x = p1.x - (pNext.x - p0.x) / 6;
+    let cp2y = p1.y - (pNext.y - p0.y) / 6;
+
+    cp1y = Math.min(Math.max(cp1y, padTop), baseY);
+    cp2y = Math.min(Math.max(cp2y, padTop), baseY);
+
+    const segment = ` C ${cp1x.toFixed(2)} ${cp1y.toFixed(2)}, ${cp2x.toFixed(2)} ${cp2y.toFixed(2)}, ${p1.x.toFixed(2)} ${p1.y.toFixed(2)}`;
+    pathD += segment;
+    areaD += segment;
+  }
+  areaD += ` L ${pts[pts.length - 1].x.toFixed(2)} ${baseY.toFixed(2)} Z`;
+
+  let circles = "";
+  pts.forEach((p) => {
+    if (p.count > 0) {
+      circles += `<circle cx="${p.x.toFixed(2)}" cy="${p.y.toFixed(2)}" r="4" fill="${T.card}" stroke="${T.accent2}" stroke-width="2.5"/>`;
+      circles += `<circle cx="${p.x.toFixed(2)}" cy="${p.y.toFixed(2)}" r="1.8" fill="#ffffff"/>`;
+      circles += `<text x="${p.x.toFixed(2)}" y="${(p.y - 8).toFixed(2)}" class="pt-val">${p.count}</text>`;
+    }
+  });
+
+  let xLabels = "";
+  const step = Math.floor((pts.length - 1) / 5);
+  const labelIndices = [0, step, step * 2, step * 3, step * 4, pts.length - 1];
+  labelIndices.forEach((idx) => {
+    const p = pts[idx];
+    const anchor = idx === 0 ? "start" : idx === pts.length - 1 ? "end" : "middle";
+    xLabels += `<text x="${p.x.toFixed(2)}" y="${(baseY + 20).toFixed(2)}" class="axis-lbl" text-anchor="${anchor}">${fmtDate(p.date)}</text>`;
+  });
+
+  return `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Contribution activity graph for ${esc(
+    LOGIN
+  )}">
+  <defs>
+    <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="${T.accent2}" stop-opacity="0.45"/>
+      <stop offset="60%" stop-color="${T.accent}" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="${T.card}" stop-opacity="0.0"/>
+    </linearGradient>
+  </defs>
+  <style>
+    .title{font:600 17px 'Segoe UI',Ubuntu,sans-serif;fill:${T.title}}
+    .subtitle{font:400 13px 'Segoe UI',Ubuntu,sans-serif;fill:${T.muted}}
+    .stat-pill{font:600 12px 'Segoe UI',Ubuntu,sans-serif;fill:${T.text}}
+    .stat-highlight{font:700 12px 'Segoe UI',Ubuntu,sans-serif;fill:${T.accent2}}
+    .grid{stroke:${T.border};stroke-dasharray:3,4;stroke-width:1}
+    .axis-lbl{font:400 11px 'Segoe UI',Ubuntu,sans-serif;fill:${T.muted}}
+    .pt-val{font:600 10px 'Segoe UI',Ubuntu,sans-serif;fill:${T.text};text-anchor:middle}
+  </style>
+
+  <rect x="0.5" y="0.5" rx="8" width="${W - 1}" height="${H - 1}" fill="${T.card}" stroke="${T.border}"/>
+
+  <!-- Header -->
+  <g transform="translate(25 33)">
+    <text x="0" y="0" class="title">Contribution Graph</text>
+    <text x="160" y="0" class="subtitle">· Last 31 Days</text>
+  </g>
+
+  <!-- Stat summary pills on top right -->
+  <g transform="translate(${W - 35} 33)" text-anchor="end">
+    <text x="0" y="0" class="stat-pill">
+      Total: <tspan class="stat-highlight">${fmt(total31)}</tspan> contribs
+      <tspan fill="${T.muted}">  ·  </tspan>
+      Max: <tspan class="stat-highlight">${yMax}</tspan>/day
+    </text>
+  </g>
+
+  <!-- Y Grid & Labels -->
+  <g>
+    <line x1="${padLeft}" y1="${padTop}" x2="${padLeft + chartW}" y2="${padTop}" class="grid"/>
+    <text x="${padLeft - 10}" y="${padTop + 4}" class="axis-lbl" text-anchor="end">${yMax}</text>
+
+    <line x1="${padLeft}" y1="${padTop + chartH / 2}" x2="${padLeft + chartW}" y2="${padTop + chartH / 2}" class="grid"/>
+    <text x="${padLeft - 10}" y="${padTop + chartH / 2 + 4}" class="axis-lbl" text-anchor="end">${yMid}</text>
+
+    <line x1="${padLeft}" y1="${baseY}" x2="${padLeft + chartW}" y2="${baseY}" stroke="${T.border}" stroke-width="1.2"/>
+    <text x="${padLeft - 10}" y="${baseY + 4}" class="axis-lbl" text-anchor="end">0</text>
+  </g>
+
+  <!-- Area & Line Graph -->
+  <path d="${areaD}" fill="url(#areaGrad)"/>
+  <path d="${pathD}" fill="none" stroke="${T.accent2}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Data Points -->
+  ${circles}
+
+  <!-- X Axis Labels -->
+  ${xLabels}
+</svg>`;
+}
+
 writeFileSync("assets/header.svg", headerSVG());
 writeFileSync("assets/stats.svg", statsSVG());
 writeFileSync("assets/langs.svg", langsSVG());
 writeFileSync("assets/streak.svg", streakSVG());
-console.log("Wrote assets/{header,stats,langs,streak}.svg");
+writeFileSync("assets/activity.svg", activitySVG());
+console.log("Wrote assets/{header,stats,langs,streak,activity}.svg");
 console.log(
   `stars=${stars} commits=${stats.Commits} prs=${stats.PRs} contribs=${totalContribs} curStreak=${current} longest=${longest}`
 );

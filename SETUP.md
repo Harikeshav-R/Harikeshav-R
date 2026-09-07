@@ -52,16 +52,14 @@ mechanism as the snake — served from your repo, never rate-limited.
 | Widget | Source | Reliability |
 |--------|--------|-------------|
 | Header banner | `assets/header.svg` (self-hosted) | ✅ committed |
-| Stats / top languages / streak | `assets/*.svg` (self-hosted) | ✅ committed |
+| Stats / top languages / streak / activity graph | `assets/*.svg` (self-hosted) | ✅ committed |
 | Snake | `output` branch (`snake.yml`) | ✅ committed |
 | Tech-stack & contact badges | img.shields.io | ✅ static renderer |
 | Typing subtitle | readme-typing-svg.demolab.com | ✅ static renderer |
-| Activity graph | github-readme-activity-graph.vercel.app | ⚠️ live service |
 | Profile views | komarev.com | ✅ static counter |
 | Project cards | pure markdown | ✅ always |
 
-The only remaining live third-party dependency is the activity graph; if it ever errors, it
-degrades to a single missing image rather than taking out a whole section.
+All dynamic stat widgets and contribution activity graphs are now self-hosted and refreshed automatically.
 
 ## Regenerating the stats
 
