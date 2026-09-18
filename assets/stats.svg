@@ -13,7 +13,7 @@
   
     <g transform="translate(30 62)" style="animation: fadein 0.4s ease-in-out forwards; animation-delay: 0.15s; opacity:0">
       <text x="0" y="0" class="lbl">⭐  Total Stars Earned</text>
-      <text x="320" y="0" class="val">16</text>
+      <text x="320" y="0" class="val">17</text>
     </g>
     <g transform="translate(30 87)" style="animation: fadein 0.4s ease-in-out forwards; animation-delay: 0.25s; opacity:0">
       <text x="0" y="0" class="lbl">🔀  Total Commits (2026)</text>
