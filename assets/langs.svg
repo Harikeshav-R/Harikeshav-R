@@ -8,7 +8,7 @@
   <rect x="0.5" y="0.5" rx="8" width="479" height="193" fill="#0D1117" stroke="#1b2430"/>
   <text x="25" y="35" class="title">Most Used Languages</text>
   <clipPath id="r"><rect x="25" y="55" width="430" height="10" rx="5"/></clipPath>
-  <g clip-path="url(#r)"><rect x="25.00" y="55" width="183.72" height="10" fill="#3572A5"/><rect x="208.72" y="55" width="124.97" height="10" fill="#555555"/><rect x="333.69" y="55" width="50.54" height="10" fill="#3178c6"/><rect x="384.23" y="55" width="18.04" height="10" fill="#e34c26"/><rect x="402.27" y="55" width="17.42" height="10" fill="#dea584"/><rect x="419.69" y="55" width="13.23" height="10" fill="#f34b7d"/><rect x="432.92" y="55" width="12.29" height="10" fill="#663399"/><rect x="445.21" y="55" width="9.79" height="10" fill="#f1e05a"/></g>
+  <g clip-path="url(#r)"><rect x="25.00" y="55" width="183.70" height="10" fill="#3572A5"/><rect x="208.70" y="55" width="124.94" height="10" fill="#555555"/><rect x="333.63" y="55" width="50.53" height="10" fill="#3178c6"/><rect x="384.16" y="55" width="18.03" height="10" fill="#e34c26"/><rect x="402.19" y="55" width="17.50" height="10" fill="#dea584"/><rect x="419.70" y="55" width="13.23" height="10" fill="#f34b7d"/><rect x="432.93" y="55" width="12.29" height="10" fill="#663399"/><rect x="445.22" y="55" width="9.78" height="10" fill="#f1e05a"/></g>
   <g transform="translate(25 90)" style="animation: fadein 0.4s ease forwards; animation-delay:0.1s; opacity:0">
         <circle cx="6" cy="-4" r="6" fill="#3572A5"/>
         <text x="20" y="0" class="lg">Python</text>
