@@ -8,27 +8,27 @@
   <rect x="0.5" y="0.5" rx="8" width="479" height="193" fill="#0D1117" stroke="#1b2430"/>
   <text x="25" y="35" class="title">Most Used Languages</text>
   <clipPath id="r"><rect x="25" y="55" width="430" height="10" rx="5"/></clipPath>
-  <g clip-path="url(#r)"><rect x="25.00" y="55" width="183.68" height="10" fill="#3572A5"/><rect x="208.68" y="55" width="124.93" height="10" fill="#555555"/><rect x="333.61" y="55" width="50.56" height="10" fill="#3178c6"/><rect x="384.17" y="55" width="18.03" height="10" fill="#e34c26"/><rect x="402.20" y="55" width="17.50" height="10" fill="#dea584"/><rect x="419.70" y="55" width="13.23" height="10" fill="#f34b7d"/><rect x="432.93" y="55" width="12.29" height="10" fill="#663399"/><rect x="445.22" y="55" width="9.78" height="10" fill="#f1e05a"/></g>
+  <g clip-path="url(#r)"><rect x="25.00" y="55" width="183.16" height="10" fill="#3572A5"/><rect x="208.16" y="55" width="124.21" height="10" fill="#555555"/><rect x="332.37" y="55" width="50.27" height="10" fill="#3178c6"/><rect x="382.64" y="55" width="19.34" height="10" fill="#dea584"/><rect x="401.98" y="55" width="17.93" height="10" fill="#e34c26"/><rect x="419.90" y="55" width="13.15" height="10" fill="#f34b7d"/><rect x="433.06" y="55" width="12.22" height="10" fill="#663399"/><rect x="445.27" y="55" width="9.73" height="10" fill="#f1e05a"/></g>
   <g transform="translate(25 90)" style="animation: fadein 0.4s ease forwards; animation-delay:0.1s; opacity:0">
         <circle cx="6" cy="-4" r="6" fill="#3572A5"/>
         <text x="20" y="0" class="lg">Python</text>
-        <text x="200" y="0" class="lgp">42.7%</text>
+        <text x="200" y="0" class="lgp">42.6%</text>
       </g><g transform="translate(255 90)" style="animation: fadein 0.4s ease forwards; animation-delay:0.17s; opacity:0">
         <circle cx="6" cy="-4" r="6" fill="#555555"/>
         <text x="20" y="0" class="lg">C</text>
-        <text x="200" y="0" class="lgp">29.1%</text>
+        <text x="200" y="0" class="lgp">28.9%</text>
       </g><g transform="translate(25 114)" style="animation: fadein 0.4s ease forwards; animation-delay:0.24000000000000002s; opacity:0">
         <circle cx="6" cy="-4" r="6" fill="#3178c6"/>
         <text x="20" y="0" class="lg">TypeScript</text>
-        <text x="200" y="0" class="lgp">11.8%</text>
+        <text x="200" y="0" class="lgp">11.7%</text>
       </g><g transform="translate(255 114)" style="animation: fadein 0.4s ease forwards; animation-delay:0.31000000000000005s; opacity:0">
+        <circle cx="6" cy="-4" r="6" fill="#dea584"/>
+        <text x="20" y="0" class="lg">Rust</text>
+        <text x="200" y="0" class="lgp">4.5%</text>
+      </g><g transform="translate(25 138)" style="animation: fadein 0.4s ease forwards; animation-delay:0.38s; opacity:0">
         <circle cx="6" cy="-4" r="6" fill="#e34c26"/>
         <text x="20" y="0" class="lg">HTML</text>
         <text x="200" y="0" class="lgp">4.2%</text>
-      </g><g transform="translate(25 138)" style="animation: fadein 0.4s ease forwards; animation-delay:0.38s; opacity:0">
-        <circle cx="6" cy="-4" r="6" fill="#dea584"/>
-        <text x="20" y="0" class="lg">Rust</text>
-        <text x="200" y="0" class="lgp">4.1%</text>
       </g><g transform="translate(255 138)" style="animation: fadein 0.4s ease forwards; animation-delay:0.45000000000000007s; opacity:0">
         <circle cx="6" cy="-4" r="6" fill="#f34b7d"/>
         <text x="20" y="0" class="lg">C++</text>
@@ -36,7 +36,7 @@
       </g><g transform="translate(25 162)" style="animation: fadein 0.4s ease forwards; animation-delay:0.52s; opacity:0">
         <circle cx="6" cy="-4" r="6" fill="#663399"/>
         <text x="20" y="0" class="lg">CSS</text>
-        <text x="200" y="0" class="lgp">2.9%</text>
+        <text x="200" y="0" class="lgp">2.8%</text>
       </g><g transform="translate(255 162)" style="animation: fadein 0.4s ease forwards; animation-delay:0.5900000000000001s; opacity:0">
         <circle cx="6" cy="-4" r="6" fill="#f1e05a"/>
         <text x="20" y="0" class="lg">JavaScript</text>
