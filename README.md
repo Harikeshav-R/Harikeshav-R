@@ -38,7 +38,7 @@ class Harikeshav:
     def __init__(self):
         self.role       = "Systems & AI Engineer"
         self.education  = "B.S. Computer Science @ Ohio State (Accelerated 3-Year Track)"
-        self.grad       = "May 2027 · Dean's List & University Honors (all semesters)"
+        self.grad       = "May 2028 · Dean's List & University Honors (all semesters)"
         self.focus      = ["High-Performance Computing", "Distributed Systems",
                            "LLM Architecture", "Applied Cryptography"]
         self.currently  = "SWE Intern @ GE Aerospace — AI / FinFlow Team"
